@@ -131,7 +131,7 @@ The following table presents the actual experimental results obtained from the l
 - F1 Score: 96.30%
 - MCC: 0.9442
 
-**Observation:** SVM achieved the highest accuracy, precision, F1 score and MCC among the five algorithms. Its high AUC and recall also indicate strong classification performance.
+**Observation:** SVM achieved the highest accuracy, F1 score and MCC among the five algorithms. It also achieved 100% precision, tied with Naive Bayes. Its high AUC and recall indicate strong classification performance.
 
 ## 8. Overall Best-Performing Model
 
@@ -142,7 +142,7 @@ Based on the experimental comparison, Support Vector Machine was identified as t
 Reasons for selecting SVM:
 
 - Highest accuracy of 97.37%.
-- Highest precision of 100%.
+- Joint highest precision of 100%, shared with Naive Bayes.
 - Highest F1 score of 96.30%.
 - Highest MCC of 0.9442.
 - Strong AUC of 99.47%.
@@ -170,7 +170,7 @@ An interactive web application was developed using Streamlit to demonstrate the 
 
 The application loads previously trained models and evaluates uploaded labelled test data.
 
-**Live Application URL:** [INSERT YOUR ACTUAL STREAMLIT CLOUD URL]
+**Live Application URL:** https://breast-cancer-classification-ml-3m3fz2qy3lzbfwrwdwkmtg.streamlit.app/
 
 ## 10. Technologies and Libraries Used
 

@@ -1,111 +1,178 @@
-
 # Breast Cancer Classification Using Machine Learning
 
 ## 1. Problem Statement
 
-The objective of this project is to develop and compare five supervised machine learning classification algorithms to classify breast cancer samples into Benign and Malignant categories using the Breast Cancer Wisconsin Diagnostic dataset.
+The objective of this project is to develop, evaluate and compare five supervised machine learning classification algorithms for breast cancer classification using the Breast Cancer Wisconsin Diagnostic (WDBC) dataset.
 
-The project evaluates five classification models using six evaluation metrics and demonstrates their performance through an interactive Streamlit web application.
+The project classifies samples into two categories: Benign and Malignant.
+
+Five machine learning algorithms are implemented and evaluated using six performance metrics. An interactive Streamlit application is also developed to demonstrate model evaluation and comparison using labelled test data.
 
 ## 2. Dataset Description
 
-**Dataset:** Breast Cancer Wisconsin Diagnostic (WDBC)
+**Dataset Name:** Breast Cancer Wisconsin Diagnostic (WDBC)
 
-**Source:** UCI Machine Learning Repository
+**Dataset Source:** UCI Machine Learning Repository
 
-**Dataset URL:**
-https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic
+**Dataset URL:** https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic
 
-Dataset characteristics:
+**Dataset Characteristics:**
 
-- Total records: 569
+- Total instances: 569
 - Input features: 30
 - Target variable: Diagnosis
-- Classification type: Binary classification
+- Classification type: Binary Classification
 - Benign samples: 357
 - Malignant samples: 212
 - Missing values: None
 
-The dataset contains numerical measurements of cell nuclei obtained from digitized images of breast mass samples.
+The dataset contains numerical measurements extracted from digitized images of fine needle aspirate (FNA) samples of breast masses.
 
-## 3. GitHub Repository Link
+The features describe characteristics of cell nuclei, including radius, texture, perimeter, area, smoothness, compactness, concavity and symmetry.
 
-[ADD YOUR GITHUB REPOSITORY URL]
+## 3. GitHub Repository
 
-The repository contains the complete source code, training notebook, dataset, test data, trained classification models, application and dependencies.
+**Repository Name:** breast-cancer-classification-ml
 
-## 4. Models Used
+**GitHub URL:** https://github.com/Manjunath-Chilukuri/breast-cancer-classification-ml
 
-The following five algorithms were implemented:
+The repository contains the source code, dataset, Jupyter Notebook, trained machine learning models, test dataset, Streamlit application and project documentation.
+
+## 4. Machine Learning Algorithms Implemented
+
+The following five supervised classification algorithms were implemented:
 
 1. Logistic Regression
 2. Decision Tree Classifier
-3. K-Nearest Neighbors
+3. K-Nearest Neighbors (KNN)
 4. Gaussian Naive Bayes
-5. Support Vector Machine
+5. Support Vector Machine (SVM)
 
-### Data Preprocessing
+## 5. Evaluation Metrics
 
-- Removed the ID column.
-- Separated independent and dependent variables.
-- Used an 80:20 train-test split.
-- Applied stratified sampling.
-- Applied StandardScaler through pipelines for Logistic Regression, KNN and SVM.
+All five classification algorithms were evaluated using six performance metrics.
 
-### Evaluation Metrics
+**1. Accuracy:** Measures the proportion of correctly classified instances.
 
-- Accuracy
-- AUC Score
-- Precision
-- Recall
-- F1 Score
-- Matthews Correlation Coefficient (MCC)
+**2. AUC (Area Under the ROC Curve):** Measures the model's ability to distinguish between the two classes.
 
-### Model Performance Comparison
+**3. Precision:** Measures the proportion of predicted positive instances that are actually positive.
+
+**4. Recall:** Measures the proportion of actual positive instances correctly identified.
+
+**5. F1 Score:** Represents the harmonic mean of precision and recall.
+
+**6. Matthews Correlation Coefficient (MCC):** Measures the overall quality of binary classification predictions, considering all four confusion matrix outcomes.
+
+## 6. Model Performance Comparison
+
+The following table presents the actual experimental results obtained from the labelled test dataset.
 
 | ML Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 |---|---:|---:|---:|---:|---:|---:|
-| Logistic Regression | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE |
-| Decision Tree | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE |
-| KNN | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE |
-| Naive Bayes | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE |
-| Support Vector Machine | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE | TO UPDATE |
+| Logistic Regression | 96.49% | 99.60% | 97.50% | 92.86% | 95.12% | 0.9245 |
+| Decision Tree | 92.98% | 92.46% | 90.48% | 90.48% | 90.48% | 0.8492 |
+| KNN | 95.61% | 98.23% | 97.44% | 90.48% | 93.83% | 0.9058 |
+| Naive Bayes | 93.86% | 99.34% | 100.00% | 83.33% | 90.91% | 0.8715 |
+| Support Vector Machine | 97.37% | 99.47% | 100.00% | 92.86% | 96.30% | 0.9442 |
 
-### Model Performance Observations
+## 7. Model-Wise Observations
 
-**Logistic Regression:** To be updated based on actual experimental results.
+### 7.1 Logistic Regression
 
-**Decision Tree:** To be updated based on actual experimental results.
+- Accuracy: 96.49%
+- AUC: 99.60%
+- Precision: 97.50%
+- Recall: 92.86%
+- F1 Score: 95.12%
+- MCC: 0.9245
 
-**KNN:** To be updated based on actual experimental results.
+**Observation:** Logistic Regression demonstrated excellent classification performance and achieved the highest AUC among all five models. It showed a strong ability to distinguish between benign and malignant samples.
 
-**Naive Bayes:** To be updated based on actual experimental results.
+### 7.2 Decision Tree Classifier
 
-**Support Vector Machine:** To be updated based on actual experimental results.
+- Accuracy: 92.98%
+- AUC: 92.46%
+- Precision: 90.48%
+- Recall: 90.48%
+- F1 Score: 90.48%
+- MCC: 0.8492
 
-### Overall Winner
+**Observation:** Decision Tree achieved balanced precision and recall. However, its overall accuracy, AUC and F1 score were comparatively lower than those of the other models.
 
-To be identified based on the actual test results, considering all six evaluation metrics and malignant-class recall.
+### 7.3 K-Nearest Neighbors (KNN)
 
-## 5. Streamlit Application
+- Accuracy: 95.61%
+- AUC: 98.23%
+- Precision: 97.44%
+- Recall: 90.48%
+- F1 Score: 93.83%
+- MCC: 0.9058
 
-The interactive application includes:
+**Observation:** KNN achieved strong classification performance, with high precision and AUC. Its recall was slightly lower than Logistic Regression and SVM.
+
+### 7.4 Gaussian Naive Bayes
+
+- Accuracy: 93.86%
+- AUC: 99.34%
+- Precision: 100.00%
+- Recall: 83.33%
+- F1 Score: 90.91%
+- MCC: 0.8715
+
+**Observation:** Naive Bayes achieved perfect precision and a high AUC. However, it recorded the lowest recall among the five algorithms, indicating that it missed a comparatively higher proportion of actual positive-class instances.
+
+### 7.5 Support Vector Machine (SVM)
+
+- Accuracy: 97.37%
+- AUC: 99.47%
+- Precision: 100.00%
+- Recall: 92.86%
+- F1 Score: 96.30%
+- MCC: 0.9442
+
+**Observation:** SVM achieved the highest accuracy, precision, F1 score and MCC among the five algorithms. Its high AUC and recall also indicate strong classification performance.
+
+## 8. Overall Best-Performing Model
+
+**Selected Model: Support Vector Machine (SVM)**
+
+Based on the experimental comparison, Support Vector Machine was identified as the best overall-performing classification algorithm.
+
+Reasons for selecting SVM:
+
+- Highest accuracy of 97.37%.
+- Highest precision of 100%.
+- Highest F1 score of 96.30%.
+- Highest MCC of 0.9442.
+- Strong AUC of 99.47%.
+- Recall of 92.86%.
+
+Although Logistic Regression achieved the highest AUC of 99.60%, SVM demonstrated the strongest overall balance across the six evaluation metrics.
+
+Therefore, SVM was selected as the overall best-performing model for this experiment.
+
+## 9. Streamlit Application
+
+An interactive web application was developed using Streamlit to demonstrate the machine learning model evaluation process.
+
+**Application Features:**
 
 - CSV test dataset upload.
-- Classification model selection.
-- Evaluation metrics display.
+- Dataset preview.
+- Five machine learning model selection.
+- Individual model evaluation.
+- Accuracy, AUC, precision, recall, F1 score and MCC display.
 - Confusion matrix visualization.
 - Classification report.
-- Comparison of all five models.
-- Downloadable comparison results.
+- Five-model performance comparison.
+- Downloadable model comparison results.
 
-The application loads previously trained models and evaluates uploaded test data without retraining.
+The application loads previously trained models and evaluates uploaded labelled test data.
 
-## 6. Live Streamlit Application
+**Live Application URL:** [INSERT YOUR ACTUAL STREAMLIT CLOUD URL]
 
-[ADD YOUR STREAMLIT APPLICATION URL]
-
-## 7. Technologies Used
+## 10. Technologies and Libraries Used
 
 - Python
 - Pandas
@@ -115,11 +182,16 @@ The application loads previously trained models and evaluates uploaded test data
 - Seaborn
 - Joblib
 - Streamlit
+- Jupyter Notebook
 
-## 8. Conclusion
+## 11. Conclusion
 
-This project implements and compares five machine learning classification algorithms using the Breast Cancer Wisconsin Diagnostic dataset.
+This project successfully implemented and compared five supervised machine learning classification algorithms using the Breast Cancer Wisconsin Diagnostic dataset.
 
-The models are evaluated using six performance metrics. An interactive Streamlit application demonstrates their performance on labelled test data.
+The experimental results demonstrated that all five models achieved promising classification performance, with Support Vector Machine providing the strongest overall results.
 
-The project covers the complete machine learning workflow, including dataset preparation, model training, evaluation, model saving and application deployment.
+The project also developed an interactive Streamlit application to demonstrate model selection, evaluation metrics, confusion matrices, classification reports and model comparison.
+
+This assignment provided practical experience in dataset preparation, supervised machine learning, model evaluation, performance comparison, model persistence and web application deployment.
+
+**Note:** This project is intended for academic and educational purposes and is not a substitute for professional medical diagnosis.
